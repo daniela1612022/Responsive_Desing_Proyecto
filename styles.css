@@ -1,0 +1,585 @@
+/*
+ 1. Posicionamiento
+ 2. Modelo de caja - (box-model)
+ 3. Tipografia ( fuentes , tamaño de fuentes , estilos)
+ 4. Visuales (efectos visuales)
+ 5. Miselaneos o otrso ( reglas extra )
+*/
+
+/*Implementacion de variables de color para reutilizacion*/
+:root{
+    /*Colores*/
+    --Bitcoin-orange:#F7931A;
+    --Soft-orange:#FFE9D5;;
+    --Secondary-blue:#1A9AF7;
+    --Soft-blue:#E7F5FF;
+    --Warm-black:#201E1C;
+    --Warm-black-1:#282623;
+    --Grey:#BABABA;
+    --Off-white:#FAF8F7;
+    --Just-white:#FFFFFF;
+}
+
+/*Selector Universal para borrar las margenes y reiniciar estilos del navegador*/
+/*box -sizing : nos permite incluir el relleno y el borde en el ancho y alto total de un elemento.*/
+/*border-box; en un elemento, el relleno y el borde están incluidos en el ancho y el alto: ¡Ambos divs tienen el mismo tamaño ahora!*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*Estilos base inicializados de tipografia para el proyecto*/
+/*Font-size : rem en vez de pixeles en el proyecto*/
+html{
+    font-size: 62.5%;
+    font-family:'DM Sans', sans-serif;
+}
+
+/*EFECTOS Y ESTILOS DE HEADER*/
+header{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-width: 320px;
+    height: 334px;
+    /*Display flex*/
+    text-align: center;
+    background: linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%);
+}
+
+/*Tamaño y alineacion del logotipo*/
+header img{
+    width: 150px;
+    height: 50px;
+    margin-top: 60px;
+    align-self: center;
+}
+
+/*Disposicion de tamaño en cambios de pantalla*/
+/*Alineacion del texto dentro del contendor*/
+.header--title-container{
+    width: 90%;
+    height: 218px;
+    min-width: 288px;
+    max-width: 900px;
+    margin-top: 40px;
+    /*Display flex*/
+    text-align: center;
+    align-self: center;
+}
+
+/*Estilos de h1 -- especificidad */
+/*2.4 rem -- 24 px*/
+
+header h1{
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--Just-white);
+}
+
+header p{
+    margin-top: 25px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--Soft-orange);
+}
+
+.header--title--container .header--button{
+    position: absolute;
+    /*Alineacion del buttom*/
+    left: calc(50% - 118px);
+    /*Disposicion del buttom*/
+    top: 270px;
+    display: block;
+    margin-top: 35px;
+    padding: 15px;
+    width: 229px;
+    height: 48px;
+    background-color: var(--Off-white);
+    /*Sombras del buttom m - efectos visuales*/
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+    border: none;
+    border-radius: 5px;
+    /*Dimensiones a las fuentes*/
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--Warm-black);
+}
+
+/*Insertamos el icono dentro del buttom*/
+.header--button span{
+    display: inline-block;
+    width: 13px;
+    height: 8px;
+    margin-left: 10px;
+    background-image: url('./assets/icons/down-arrow.svg');
+}
+
+/*ESTILO SECCION INTERCAMBIOS*/
+/*Estructura general del main para dimensiones y espacios dependiendo del contenido*/
+main{
+    width: 100%;
+    height: auto;
+    background-color: var(--Off-white);
+}
+/*Estilos de los contenedores - contenedor general de la seccion de intercambios*/
+.main-exchange-container{
+    width: 100%;
+    height: auto;
+    /*Espacios arriba y abajo*/
+    padding-top: 80px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+
+/*Estilos de los contenedores - contenedor imagen bit-coin*/
+.main-exchange-container .backgroundImg{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background-image: url('./assets/img/Bitcoin.svg');
+    /*Alineacion de imagen sin repeticiones y con visibilidad*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*Estilos de los contenedores - contenedor textos*/
+/*min y max widht limitan el crecimiento o decrecimiento dependiendo del tamaño de la pantalla*/
+.main-exchange-container-title{
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+main h2{
+    margin-bottom: 30px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--Warm-black);
+}
+
+.main-exchange-container p{
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+    color: #757575;
+}
+
+/*Estilos de los contenedores - contenedor tablas*/
+/*Tabla 1 -monedas -costos actuales*/
+.main-currency-table{
+    width: 70%;
+    min-width: 235px;
+    max-width: 500px;
+    height: 360px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+}
+
+/*Title*/
+.main-currency-table .currency-table--title{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color: var(--Bitcoin-orange);
+}
+
+/*Contenedor de la tabla*/
+.currency-table--container{
+    width: 90%;
+    min-height: 230px;
+    max-width: 300px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+/*Tamaño de la tabla dentro del contenedor*/
+.currency-table--container table{
+    width: 100%;
+    height: 100%;
+}
+
+/*estilos del contenido de la tabla*/
+.currency-table--container td{
+    width: 50%;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.9rem;
+    color: var(--Grey);
+    background: var(--Just-white);
+}
+
+/*Redondear secciones especificas de la tabla*/
+.currency-table--container .table__top-left{
+    border-radius: 15px 0 0 0 ;
+}
+
+.currency-table--container .table__top-right{
+    border-radius: 0 15px 0 0 ;
+}
+
+.currency-table--container .table__bottom-left{
+    border-radius: 0 0 0 15px ;
+}
+
+.currency-table--container .table__bottom-right{
+    border-radius: 0 0 15px  0 ;
+}
+
+/*Cambio de estilos columna derecha*/
+.currency-table--container .table__right{
+    font-size: 1.4rem;
+    font-weight: normal;
+    list-style: 1.6rem;
+    color: #757575;
+}
+
+/*Agregamos iconos en span*/
+.currency-table--container .icon-down{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url('./assets/icons/trending-down.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.currency-table--container .icon-up{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url('./assets/icons/trending-up.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*Estilo de actualizacion de fecha*/
+.currency-table--date {
+    width: 190px;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: var(--Soft-orange);
+    border-radius: 8px;
+}
+
+.currency-table--date p{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 4;
+    color: var(--Warm-black);
+}
+
+/*SECCION DE PRODUCTOS GENERAL*/
+.main-product-detail{
+    position: relative;
+    width: 100%;
+    min-width: 320px;
+    height: auto;
+    padding: 20px 10px;
+    background: var(--Warm-black);
+}
+
+/*Logotipo*/
+.product-detail-batata-logo{
+    position: absolute;
+    width: 40px;
+    height: 25px;
+    top: -10px;
+    left: calc(50% - 20px);
+    background-image: url(./assets/icons/batata.svg);
+}
+
+/*Estilos de contenedor de contenido*/
+.product-detail--title{
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+}
+/*Titulo*/
+.product-detail--title h2{
+    margin-bottom: 20px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--Just-white);
+}
+/*Parrafo*/
+.product-detail--title p{
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--Grey);
+}
+
+/*TARJECAS DE BENEFICIO DE LA SECCION 2*/
+.product-detail--card{
+    width: 90%;
+    min-width: 288px;
+    max-width: 400px;
+    min-height: 150px;
+    height: 150px;
+    margin: 15px auto;
+    padding: 15px;
+    background-color: var(--Warm-black-1);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.16);
+}
+
+/*icons*/
+.icon-clock{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url('./assets/icons/clock.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.icon-eye{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url('./assets/icons/eye.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.icon-cash{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url('./assets/icons/dollar-sign.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.icon-check{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url('./assets/icons/check-circle.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*texto*/
+.product-card-title{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--Just-white);
+}
+
+.product-card-body{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--Grey);
+}
+
+/*SECCION COMODIN CONTENEDOR DE IMAGEN*/
+.bitcoin-img-container{
+    width: 100%;
+    min-width: 320px;
+    height: 50vh;
+    background-image: url('./assets/img/bitcoinbaby2x.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/*Texto img*/
+.bitcoin-img-container h2{
+    padding-top: 60px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--Just-white);
+    text-align: center;
+}
+
+/*SECCIONES PLANES CON SLIDERS*/
+.main-plans-container{
+    width: 100%;
+    min-width: 320px;
+    padding-bottom: 70px;
+    text-align: center;
+    background: var(--Off-white);
+}
+
+.plans--title{
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.plans--title h2{
+    padding-top: 50px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--Warm-black);
+}
+
+.plans--title p{
+    padding-top: 10px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--Warm-black-1);
+}
+
+
+/*Estilo para contenedor de los sliders*/
+.plans-container-card{
+    position: relative;
+    scroll-snap-align: center;
+    width: 70%;
+    min-width: 230px;
+    max-width: 300px;
+    height: 250px;
+    margin: 50px auto 0;
+    padding: 0 15px;
+    background-color: var(--Just-white);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(89,73,30,0.16);
+}
+
+/*Estilo de seccion recomendado*/
+ .recomedado{
+    position: absolute;
+    width: 120px;
+    height: 310x;
+    top: -10px;
+    left: calc(50% - 60px);
+    background: var(--Bitcoin-orange);
+    border-radius: 8px;
+    color: var(--Just-white);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 6px;
+}
+
+/*Titulos del plan de la tarjeta*/
+.plan-card-title{
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--Warm-black);
+}
+
+/*Estructura de los precios en fuente*/
+.plan-card-price{
+    padding: 5px 0;
+    font-size: 5.3rem;
+    font-weight: bold;
+    color: var(--Warm-black);
+}
+
+.plan-card-price span{
+    font-size: 1.2rem;
+    font-weight: 300;
+    vertical-align: text-top;
+}
+
+/*Contenido de cada plan de los sliders fuentes*/
+.plan-card--saving{
+    color: var(--Grey);
+    font-size: 1.2rem;
+}
+
+/*Estilos de boton ca*/
+.plan-card-ca{
+    width: 150px;
+    height: 48px;
+    margin-top:20px;
+    background-color: var(--Off-white);
+    border: 2px solid var(--Bitcoin-orange);
+    border-radius: 8px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--Warm-black);
+}
+
+.plan-card-ca span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    left: auto;
+    background-image: url('./assets/icons/orange-right-arrow.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    vertical-align: text-bottom;
+}
+
+/*sliders*/
+.plans-container-slider{
+    display: flex;
+    gap: 30px;
+    height: 316px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+
+/*Pie de pagina*/
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 150px;
+    padding-left: 10px;
+    background-color: var(--Bitcoin-orange);
+}
+
+footer ul {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    list-style: none;
+}
+
+.left li {
+    margin: 10px 0;
+}
+.left a {
+    text-decoration: none;
+    color: var(--just-white);
+}
